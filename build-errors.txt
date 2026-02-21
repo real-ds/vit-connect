@@ -1,0 +1,17 @@
+﻿src/App.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/Communities.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/CommunityView.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/Feed.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/Navbar.tsx(81,24): error TS6133: 'query' is declared but its value is never read.
+src/components/PostList.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/PostList.tsx(1,17): error TS6133: 'useEffect' is declared but its value is never read.
+src/components/Profile.tsx(2,18): error TS6133: 'UserIcon' is declared but its value is never read.
+src/components/Profile.tsx(2,46): error TS6133: 'FileText' is declared but its value is never read.
+src/components/Profile.tsx(2,69): error TS6133: 'Plus' is declared but its value is never read.
+src/components/Sidebar.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/Sidebar.tsx(3,23): error TS6133: 'Bookmark' is declared but its value is never read.
+src/components/Sidebar.tsx(3,33): error TS6133: 'Settings' is declared but its value is never read.
+src/components/Sidebar.tsx(15,9): error TS6133: 'handleCommunityClick' is declared but its value is never read.
+src/store/useStore.ts(93,3): error TS2322: Type '(community: Omit<Community, "id">) => Promise<Community>' is not assignable to type '(community: Omit<Community, "id">) => Promise<void>'.
+  Type 'Promise<Community>' is not assignable to type 'Promise<void>'.
+    Type 'Community' is not assignable to type 'void'.

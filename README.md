@@ -1,50 +1,35 @@
-# React + TypeScript + Vite
+# VIT Connect
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+VIT Connect is a dedicated social media and social forum application designed specifically to foster community engagement and discussion.
 
-Currently, two official plugins are available:
+## 🚀 About the Project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Our platform aims to provide a centralized hub for users to come together, communicate, and share their thoughts. Whether you are looking to discuss academic topics, share announcements, join specific interest communities, or just casually interact with peers, VIT Connect provides the perfect virtual environment.
 
-## Expanding the ESLint configuration
+### Core Features
+- **User Authentication:** Secure login for students, faculty, and admins.
+- **Social Feed:** A dynamic timeline for viewing and interacting with posts from your network.
+- **Specialized Communities:** Join various groups (like "Computer Science", "Campus Life", "Tech Club") to engage with like-minded individuals.
+- **Interactive Posts:** Like, share, and comment on discussions to keep the conversation flowing.
+- **User Profiles:** Customize your personal profile with an avatar, bio, department details, and social links.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 🛠️ Tech Stack
+- Frontend Framework: React (with TypeScript)
+- Build Tool: Vite
+- State Management: Zustand
+- Styling: Tailwind CSS
+- Backend/Database: Firebase & Firestore
+- Routing: React Router
 
-- Configure the top-level `parserOptions` property like this:
+## 📦 Getting Started
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Prerequisites
+- Node.js installed on your local machine.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Installation & Setup
+1. Clone the repository.
+2. Run `npm install` to install dependencies.
+3. Start the development server with `npm run dev`.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## 🌐 Deployment
+The project is configured for seamless deployment on Vercel. A `vercel.json` is included to efficiently route Single Page Application traffic.

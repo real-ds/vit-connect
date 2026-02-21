@@ -17,22 +17,22 @@ export default function Sidebar() {
   };
 
   return (
-    <aside className="w-64 flex-shrink-0">
-      <div className="bg-sky-950 rounded-lg shadow-sm p-4">
-        <nav className="space-y-1">
+    <aside className="w-full md:w-64 flex-shrink-0">
+      <div className="bg-sky-950 rounded-lg shadow-sm p-2 md:p-4 mb-2 md:mb-0">
+        <nav className="flex space-x-2 md:flex-col md:space-x-0 md:space-y-1 overflow-x-auto pb-1 md:pb-0">
           <Link
             to="/"
-            className="flex items-center space-x-3 px-4 py-2 text-white hover:bg-sky-900 rounded-lg"
+            className="flex items-center space-x-2 md:space-x-3 px-3 md:px-4 py-2 text-white hover:bg-sky-900 rounded-lg flex-shrink-0"
           >
             <Home className="w-5 h-5" />
-            <span>Home</span>
+            <span className="hidden sm:inline md:inline">Home</span>
           </Link>
           <Link
             to="/communities"
-            className="flex items-center space-x-3 px-4 py-2 text-white hover:bg-sky-900 rounded-lg"
+            className="flex items-center space-x-2 md:space-x-3 px-3 md:px-4 py-2 text-white hover:bg-sky-900 rounded-lg flex-shrink-0"
           >
             <Users className="w-5 h-5" />
-            <span>Explore</span>
+            <span className="hidden sm:inline md:inline">Explore</span>
           </Link>
           {/* <Link
             to="/saved"
@@ -50,8 +50,8 @@ export default function Sidebar() {
           </Link> */}
         </nav>
 
-        <div className="mt-8">
-          <h3 className="px-4 text-sm font-semibold text-white  uppercase tracking-wider">
+        <div className="hidden md:block mt-8">
+          <h3 className="px-4 text-sm font-semibold text-white uppercase tracking-wider">
             Popular Communities
           </h3>
           <div className="mt-4 space-y-1">

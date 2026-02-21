@@ -21,7 +21,7 @@ export default function Profile() {
     if ('preventDefault' in e) {
       e.preventDefault();
     }
-    
+
     setLoading(true);
     setError('');
 
@@ -50,18 +50,18 @@ export default function Profile() {
   return (
     <div className="max-w-4xl mx-auto space-y-6">
       <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-        <div className="h-32 bg-gradient-to-r from-blue-500 to-purple-600"></div>
-        <div className="p-6 -mt-12">
-          <div className="flex justify-between items-start">
-            <div className="flex items-end space-x-4">
+        <div className="h-24 md:h-32 bg-gradient-to-r from-blue-500 to-purple-600"></div>
+        <div className="p-4 md:p-6 -mt-12">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
+            <div className="flex flex-col sm:flex-row items-start sm:items-end gap-2 sm:gap-4">
               <img
                 src={currentUser?.avatar}
                 alt={currentUser?.name}
-                className="w-24 h-24 rounded-full border-4 border-white"
+                className="w-20 h-20 md:w-24 md:h-24 rounded-full border-4 border-white"
               />
-              <div>
-                <h1 className=" mt-8 text-2xl font-bold">{currentUser?.name}</h1>
-                <p className="text-gray-600">{currentUser?.department}</p>
+              <div className="mt-2 sm:mt-0">
+                <h1 className="text-xl md:text-2xl font-bold sm:mt-8">{currentUser?.name}</h1>
+                <p className="text-sm md:text-base text-gray-600">{currentUser?.department}</p>
               </div>
             </div>
             <button
@@ -96,7 +96,7 @@ export default function Profile() {
 
           {isEditing ? (
             <form onSubmit={handleSubmit} className="mt-6 space-y-4">
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700">Name</label>
                   <input
@@ -163,7 +163,7 @@ export default function Profile() {
           ) : (
             <div className="mt-6 space-y-6">
               <p className="text-gray-600">{currentUser?.bio || 'No bio added yet'}</p>
-              
+
               <div className="flex space-x-4">
                 {currentUser?.socialLinks?.linkedin && (
                   <a
@@ -193,9 +193,9 @@ export default function Profile() {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow-sm p-6">
-        <h2 className="text-xl font-semibold mb-4">My Communities</h2>
-        <div className="grid grid-cols-2 gap-4">
+      <div className="bg-white rounded-lg shadow-sm p-4 md:p-6">
+        <h2 className="text-lg md:text-xl font-semibold mb-4">My Communities</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {userCommunities.map(community => (
             <div key={community.id} className="flex items-center space-x-3 p-3 rounded-lg border">
               <img

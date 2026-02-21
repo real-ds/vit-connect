@@ -22,7 +22,7 @@ const App = () => {
       if (user) {
         // Check if user exists in Firestore
         const userDoc = await getDoc(doc(db, 'users', user.uid));
-        
+
         if (!userDoc.exists()) {
           // Create new user document if first time
           const newUser = {
@@ -35,7 +35,7 @@ const App = () => {
             bio: '',
             createdAt: new Date().toISOString()
           };
-          
+
           await setDoc(doc(db, 'users', user.uid), newUser);
           setCurrentUser(newUser);
         } else {
@@ -62,9 +62,9 @@ const App = () => {
     <BrowserRouter>
       <div className="min-h-screen bg-gray-200">
         <Navbar />
-        <div className="container mx-auto px-4 py-8 flex gap-8">
+        <div className="container mx-auto px-2 md:px-4 py-4 md:py-8 flex flex-col md:flex-row gap-4 md:gap-8">
           <Sidebar />
-          <main className="flex-1">
+          <main className="flex-1 w-full min-w-0">
             <Routes>
               <Route path="/" element={<Feed />} />
               <Route path="/communities" element={<Communities />} />

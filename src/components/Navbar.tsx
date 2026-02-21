@@ -29,12 +29,12 @@ export default function Navbar() {
     <nav className="bg-sky-950 shadow-sm border-b">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center space-x-3">
-            <MessageCircle className="w-8 h-8 text-blue-600" />
-            <span className="text-xl font-bold text-white">VIT Connect</span>
+          <Link to="/" className="flex items-center space-x-2 md:space-x-3">
+            <MessageCircle className="w-6 h-6 md:w-8 md:h-8 text-blue-600" />
+            <span className="text-lg md:text-xl font-bold text-white hidden sm:block">VIT Connect</span>
           </Link>
 
-          <div className="flex-1 max-w-2xl mx-8">
+          <div className="flex-1 max-w-2xl mx-2 md:mx-8">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
               <input
@@ -52,24 +52,24 @@ export default function Navbar() {
             </div>
           </div>
 
-          <div className="flex items-center space-x-4">
-            <button className="p-2 hover:bg-gray-100 rounded-full">
-              <Bell className="w-6 h-6 text-sky-600" />
+          <div className="flex items-center space-x-2 md:space-x-4">
+            <button className="p-2 hover:bg-gray-100/10 rounded-full">
+              <Bell className="w-5 h-5 md:w-6 md:h-6 text-sky-600" />
             </button>
             <Link to="/profile" className="flex items-center space-x-2 hover:bg-sky-900 rounded-lg p-2">
               <img
                 src={currentUser?.avatar}
                 alt={currentUser?.name}
-                className="w-8 h-8 rounded-full"
+                className="w-7 h-7 md:w-8 md:h-8 rounded-full"
               />
-              <span className="text-white font-medium">{currentUser?.name}</span>
+              <span className="text-white font-medium hidden md:block">{currentUser?.name}</span>
             </Link>
             <button
               onClick={handleLogout}
-              className="flex items-center space-x-2 p-2 text-red-500 hover:bg-red-50 rounded-lg"
+              className="flex items-center space-x-2 p-2 text-red-500 hover:bg-red-50/10 rounded-lg"
             >
               <LogOut className="w-5 h-5" />
-              <span>Logout</span>
+              <span className="hidden md:block">Logout</span>
             </button>
           </div>
         </div>

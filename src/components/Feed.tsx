@@ -36,11 +36,11 @@ export default function Feed() {
   return (
     <div className="space-y-6">
       {posts.map((post) => (
-        <article key={post.id} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6">
-          <h2 className="text-2xl font-bold mb-3">{post.communityName}</h2>
-          <p className="text-black-700 mb-4 text-xl font-bold">{post.title}</p>
-          <p className="text-gray-700 mb-4">{post.content}</p>
-          <div className="mt-2 pt-2  border-gray-200 text-sm text-gray-500">
+        <article key={post.id} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-4 sm:p-6">
+          <h2 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">{post.communityName}</h2>
+          <p className="text-black-700 mb-3 sm:mb-4 text-lg sm:text-xl font-bold">{post.title}</p>
+          <p className="text-gray-700 mb-4 text-sm sm:text-base">{post.content}</p>
+          <div className="mt-2 pt-2 border-gray-200 text-xs sm:text-sm text-gray-500">
             {new Date(post.createdAt).toLocaleDateString()}
           </div>
         </article>

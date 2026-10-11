@@ -1,41 +1,38 @@
-/* VIT Connect — landing page. Minimal JS: nav state, reveal, year. */
-
+/* VIT Connect — nav state, scroll reveals and footer year. */
 (function () {
-  'use strict';
+  "use strict";
 
-  /* sticky nav background flips once you leave the dark hero */
-  var nav = document.getElementById('nav');
-  var hero = document.querySelector('.hero');
-  var heroEnd = hero ? hero.offsetTop + hero.offsetHeight - 80 : 0;
+  var nav = document.getElementById("nav");
+  var hero = document.querySelector(".hero");
+  var items = document.querySelectorAll(".reveal");
+  var year = document.getElementById("year");
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var observer;
 
-  function onScroll() {
+  function updateNav() {
     if (!nav) return;
-    nav.classList.toggle('is-stuck', window.scrollY > heroEnd);
+    var heroEnd = hero ? hero.getBoundingClientRect().bottom + window.scrollY - 80 : 0;
+    nav.classList.toggle("is-stuck", window.scrollY > heroEnd);
   }
-  onScroll();
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', onScroll, { passive: true });
 
-  /* fade sections in once, never out */
-  var items = document.querySelectorAll('.reveal');
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  updateNav();
+  window.addEventListener("scroll", updateNav, { passive: true });
+  window.addEventListener("resize", updateNav, { passive: true });
 
-  if (reduced || !('IntersectionObserver' in window)) {
-    items.forEach(function (el) { el.classList.add('is-in'); });
+  if (reduced || !("IntersectionObserver" in window)) {
+    items.forEach(function (item) { item.classList.add("is-in"); });
   } else {
-    var io = new IntersectionObserver(function (entries) {
+    observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          entry.target.classList.add('is-in');
-          io.unobserve(entry.target);
+          entry.target.classList.add("is-in");
+          observer.unobserve(entry.target);
         }
       });
-    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.06 });
 
-    items.forEach(function (el) { io.observe(el); });
+    items.forEach(function (item) { observer.observe(item); });
   }
 
-  /* footer year */
-  var year = document.getElementById('year');
   if (year) year.textContent = String(new Date().getFullYear());
 })();

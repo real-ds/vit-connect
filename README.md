@@ -4,8 +4,8 @@
 
 **For the People. By the People. Of the People.**
 
-[![Live app](https://img.shields.io/badge/live_app-vit--connect.vercel.app-4F7DF5?style=flat-square&logo=vercel&logoColor=white)](https://vit-connect.vercel.app)
-[![Landing page](https://img.shields.io/badge/pages-real--ds.github.io%2Fvit--connect-6D8CFF?style=flat-square&logo=githubpages&logoColor=white)](https://real-ds.github.io/vit-connect/)
+[![Live app](https://img.shields.io/badge/live_app-vit--connect.vercel.app-000000?style=flat-square&logo=vercel&logoColor=white)](https://vit-connect.vercel.app)
+[![Landing page](https://img.shields.io/badge/github_pages-real--ds.github.io%2Fvit--connect-4a4f57?style=flat-square&logo=githubpages&logoColor=white)](https://real-ds.github.io/vit-connect/)
 [![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.6-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 [![Firebase](https://img.shields.io/badge/Firebase-11-FFCA28?style=flat-square&logo=firebase&logoColor=black)](https://firebase.google.com)
@@ -14,7 +14,7 @@
 A campus social forum for VIT students, faculty, clubs and departments —
 one searchable feed instead of forty dying group chats.
 
-[**Open the app ↗**](https://vit-connect.vercel.app) · [**Read the landing page ↗**](https://real-ds.github.io/vit-connect/) · [**Report an issue**](https://github.com/real-ds/vit-connect/issues/new) · [**Source**](https://github.com/real-ds/vit-connect)
+[**Open the app ↗**](https://vit-connect.vercel.app) · [**Landing page ↗**](https://real-ds.github.io/vit-connect/) · [**Privacy**](https://real-ds.github.io/vit-connect/privacy.html) · [**Terms**](https://real-ds.github.io/vit-connect/terms.html) · [**Report an issue**](https://github.com/real-ds/vit-connect/issues/new) · [**Source**](https://github.com/real-ds/vit-connect)
 
 </div>
 
@@ -30,6 +30,7 @@ one searchable feed instead of forty dying group chats.
 | 4 | [Users and why](#4-users-and-why) | 10 | [Deployment](#10-deployment) |
 | 5 | [Functional requirements](#5-functional-requirements-ids) | 11 | [Roadmap](#11-roadmap) |
 | 6 | [Scope](#6-scope) | 12 | [Known issues](#12-known-issues) |
+| | | 13 | [Contributing](#13-contributing) |
 
 ---
 
@@ -46,7 +47,8 @@ one searchable feed instead of forty dying group chats.
 | **Backend** | Firebase Auth + Cloud Firestore (serverless) |
 | **Routing** | React Router 6 |
 | **Web live at** | [vit-connect.vercel.app](https://vit-connect.vercel.app) |
-| **Landing page** | [real-ds.github.io/vit-connect](https://real-ds.github.io/vit-connect/) — GitHub Pages, served from [`/docs`](docs/) |
+| **Landing page** | [real-ds.github.io/vit-connect](https://real-ds.github.io/vit-connect/) — GitHub Pages, built from [`/docs`](docs/) |
+| **Legal pages** | [Privacy](https://real-ds.github.io/vit-connect/privacy.html) · [Terms](https://real-ds.github.io/vit-connect/terms.html) — same Pages site, sources in [`docs/privacy.html`](docs/privacy.html) and [`docs/terms.html`](docs/terms.html) |
 | **Repository** | [github.com/real-ds/vit-connect](https://github.com/real-ds/vit-connect) |
 | **Maintainer** | [@real-ds](https://github.com/real-ds) |
 | **License** | None yet — add one before inviting outside contributions |
@@ -201,7 +203,10 @@ All timestamps are ISO-8601 strings. See [`types.ts`](src/types.ts).
 | Icons | lucide-react | Consistent icon set |
 | Dates | date-fns | Relative timestamps |
 | Hosting | Vercel | SPA rewrites + edge CDN |
-| Docs | GitHub Pages | This README's sibling landing page, served from `/docs` |
+| **Landing site** | **Vanilla HTML / CSS / JS** | No framework, no bundler, no build step — it runs on GitHub Pages directly |
+| Landing type | Inter | Loaded from Google Fonts, single typeface site-wide |
+| Landing icons | Simple Icons (CC0) | React, TypeScript, Vite, Tailwind, Firebase and Vercel marks inlined as SVG |
+| Landing motion | Vanilla IntersectionObserver | Scroll reveals, `prefers-reduced-motion` respected |
 
 ---
 
@@ -257,8 +262,28 @@ Enable **Email/Password** and **Google** sign-in providers in the Firebase conso
 |---|---|---|
 | **App** → [vit-connect.vercel.app](https://vit-connect.vercel.app) | `main` | [`vercel.json`](vercel.json) rewrites all traffic to `index.html` so deep links work |
 | **Landing page** → [real-ds.github.io/vit-connect](https://real-ds.github.io/vit-connect/) | `main` → `/docs` | GitHub Pages, static HTML/CSS/JS, no build step |
+| **Legal pages** → [/privacy.html](https://real-ds.github.io/vit-connect/privacy.html) · [/terms.html](https://real-ds.github.io/vit-connect/terms.html) | `main` → `/docs` | Same Pages site; served as plain files |
 
-The landing page is plain HTML in [`docs/`](docs/) — it is not part of the Vite bundle and does not affect `npm run build`. Push to `main` and both surfaces redeploy on their own.
+### The landing site (GitHub Pages)
+
+The landing page is a separate static site that lives in [`docs/`](docs/). It is **not** part of the Vite bundle — `docs/index.html` is not the app entry point, and `npm run build` neither reads it nor writes to it.
+
+| File | Purpose |
+|---|---|
+| [`docs/index.html`](docs/index.html) | The page. Nav, hero, and four sections: Platform, Community, Why it exists, Under the hood |
+| [`docs/style.css`](docs/style.css) | Entire design system — tokens, layout, motion, responsive rules |
+| [`docs/script.js`](docs/script.js) | 38 lines: sticky-nav state, scroll reveals, footer year |
+| [`docs/vitconnectlogo.svg`](docs/vitconnectlogo.svg) | Wordmark used in the footer (copied from [`public/`](public/)) |
+| [`docs/privacy.html`](docs/privacy.html) | Privacy Policy |
+| [`docs/terms.html`](docs/terms.html) | Terms & Conditions |
+
+**Design system** — a monochrome palette (`--bg #08090b`, `--fg #f7f7f8`, hairlines at `rgba(255,255,255,.1)`), Inter throughout, and depth from soft white radial glows rather than colour or drop shadows. There is no purple anywhere in the stylesheet, which is enforced by the token set.
+
+**How Pages is configured** — source is the `main` branch, path `/docs`, build type legacy. Nothing runs at publish time; whatever is committed to `docs/` is what gets served, so pushing to `main` redeploys both the app and the landing page on their own.
+
+**To edit it** — change any file in `docs/` and open a PR. No build command, no environment variables, no `npm install`. The one asset to keep in sync is the logo: if you change [`public/vitconnectlogo.svg`](public/vitconnectlogo.svg), copy it to `docs/` as well, or the footer will show a stale mark.
+
+> The Pages site is served from a **public repository**. Treat anything in `docs/` as public — no secrets, no internal URLs.
 
 ---
 
@@ -292,8 +317,34 @@ The landing page is plain HTML in [`docs/`](docs/) — it is not part of the Vit
 
 ---
 
+<a id="13-contributing"></a>
+
+## 13. Contributing
+
+Issues and pull requests are welcome. Before opening a large one, open an issue first so the approach can be agreed on.
+
+**Reporting a bug** — include the route, the browser, and the console output. Most defects in this codebase are one of the [known issues](#12-known-issues) above, so check that list first.
+
+**Working on the app** (`src/`)
+- `npm run lint` must pass, and `npm run build` must type-check cleanly.
+- Keep the domain models in [`types.ts`](src/types.ts) as the single source of truth; add a field there before adding it anywhere else.
+- All Firestore access goes through [`useStore.ts`](src/store/useStore.ts). Components read from the store, they don't query the database directly.
+- Any schema change to `posts`, `users` or `communities` needs a matching update to the data model table in [§7](#7-architecture).
+
+**Working on the landing site** (`docs/`)
+- Plain HTML, CSS and JavaScript only — **no framework, no bundler, no build step**. If a change needs a compile step, it belongs in the app instead.
+- Keep the palette monochrome. Do not reintroduce colour accents or gradients; the design system in [§10](#10-deployment) explains why.
+- Check your change at 390px, 700px, 1000px and 1440px before opening the PR.
+- Mirror asset changes from `public/` into `docs/`.
+
+**Security** — never commit Firebase credentials or API keys. `src/firebaseConfig.ts` is gitignored; each setup supplies its own project config. See [KI-09](#12-known-issues) for the one already in history.
+
+**Legal pages** — [`docs/privacy.html`](docs/privacy.html) and [`docs/terms.html`](docs/terms.html) describe what the software actually does. If you change what data is collected or stored, update them in the same PR — they are not boilerplate.
+
+---
+
 <div align="center">
 
-**Built by [@real-ds](https://github.com/real-ds)** · [App](https://vit-connect.vercel.app) · [Landing page](https://real-ds.github.io/vit-connect/) · [Issues](https://github.com/real-ds/vit-connect/issues)
+**Built by [@real-ds](https://github.com/real-ds)** · [App](https://vit-connect.vercel.app) · [Landing page](https://real-ds.github.io/vit-connect/) · [Privacy](https://real-ds.github.io/vit-connect/privacy.html) · [Terms](https://real-ds.github.io/vit-connect/terms.html) · [Issues](https://github.com/real-ds/vit-connect/issues)
 
 </div>

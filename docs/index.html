@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>VIT Connect — the campus network that belongs to campus</title>
+<meta name="description" content="VIT Connect is a campus social forum for VIT students, faculty, clubs and departments. One feed, real communities, profiles that carry weight." />
+<meta property="og:title" content="VIT Connect — everything happening at VIT, in one thread" />
+<meta property="og:description" content="A social forum built for the people already on campus." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://real-ds.github.io/vit-connect/" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b0c0e'/%3E%3Cpath d='M9 11.5A2.5 2.5 0 0 1 11.5 9h9A2.5 2.5 0 0 1 23 11.5v6A2.5 2.5 0 0 1 20.5 20H14l-4 3.5V20a2.5 2.5 0 0 1-1-2z' fill='none' stroke='%236d8cff' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+<a class="skip" href="#what">Skip to content</a>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="nav__in">
+    <a class="brand" href="#top" aria-label="VIT Connect home">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5.5 8.5A2.5 2.5 0 0 1 8 6h8a2.5 2.5 0 0 1 2.5 2.5v5A2.5 2.5 0 0 1 16 16h-4l-3.5 3V16h-.5A2.5 2.5 0 0 1 5.5 13.5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="brand__word">VIT&nbsp;Connect</span>
+    </a>
+
+    <nav class="nav__links" aria-label="Sections">
+      <a href="#what">What it is</a>
+      <a href="#who">Who it's for</a>
+      <a href="#stack">Stack</a>
+    </nav>
+
+    <a class="btn btn--sm" href="https://vit-connect.vercel.app" target="_blank" rel="noopener">
+      Open app <span class="ar" aria-hidden="true">↗</span>
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ 01 · HERO ============ -->
+  <section class="hero">
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="hero__grid" aria-hidden="true"></div>
+
+    <div class="hero__in">
+      <p class="eyebrow reveal">Campus social forum <span class="dot"></span> VIT</p>
+
+      <h1 class="hero__h1 reveal" style="--d:.06s">
+        Everything happening at VIT,<br />
+        in <span class="grad">one thread</span>.
+      </h1>
+
+      <p class="hero__sub reveal" style="--d:.14s">
+        A forum for the people already on campus. Announcements, doubts, opportunities
+        and club talk land in one place — instead of dying in a group chat.
+      </p>
+
+      <div class="hero__cta reveal" style="--d:.22s">
+        <a class="btn" href="https://vit-connect.vercel.app" target="_blank" rel="noopener">
+          Open VIT Connect <span class="ar" aria-hidden="true">↗</span>
+        </a>
+        <a class="btn btn--ghost" href="#what">See what it is <span class="ar" aria-hidden="true">↓</span></a>
+      </div>
+
+      <p class="hero__meta reveal" style="--d:.3s">
+        live at <a href="https://vit-connect.vercel.app" target="_blank" rel="noopener">vit-connect.vercel.app</a>
+      </p>
+    </div>
+
+    <div class="hero__ticker" aria-hidden="true">
+      <span>React</span><span>TypeScript</span><span>Firebase</span><span>Firestore</span><span>Zustand</span><span>Tailwind</span><span>Vercel</span>
+    </div>
+  </section>
+
+
+  <!-- ============ 02 · WHAT IT IS ============ -->
+  <section class="sec sec--what" id="what">
+    <div class="wrap">
+      <p class="label reveal"><span class="label__n">01</span> What exactly this is</p>
+
+      <div class="sec__head">
+        <h2 class="h2 reveal" style="--d:.05s">
+          Not a feed for the internet.<br />A forum with a <span class="grad">closed door</span>.
+        </h2>
+        <p class="lede reveal" style="--d:.12s">
+          Only people who share a campus get in. That constraint is the whole point —
+          it's why a question here gets an answer, and why an announcement here
+          is actually read.
+        </p>
+      </div>
+
+      <div class="spec">
+        <article class="spec__row reveal">
+          <p class="spec__n">01</p>
+          <h3 class="spec__t">One shared feed</h3>
+          <p class="spec__d">Event notices, lost-and-found, project teams, study partners. Newest first — no algorithm deciding what you get to see.</p>
+        </article>
+        <article class="spec__row reveal" style="--d:.06s">
+          <p class="spec__n">02</p>
+          <h3 class="spec__t">Communities that map to real life</h3>
+          <p class="spec__d">Computer Science, Campus Life, Research Hub, Tech Club. Join the ones you belong to, or create the one nobody has made yet.</p>
+        </article>
+        <article class="spec__row reveal" style="--d:.12s">
+          <p class="spec__n">03</p>
+          <h3 class="spec__t">Profiles that carry weight</h3>
+          <p class="spec__d">Department, bio, resume link, GitHub and LinkedIn attached to your name — so you arrive with context, not a blank slate.</p>
+        </article>
+        <article class="spec__row reveal" style="--d:.18s">
+          <p class="spec__n">04</p>
+          <h3 class="spec__t">Small on purpose</h3>
+          <p class="spec__d">No strangers, no engagement bait, no infinite scroll for its own sake. The audience is already the right size, so it stays worth reading.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ 03 · WHO & WHY ============ -->
+  <section class="sec sec--who" id="who">
+    <div class="wrap">
+      <p class="label reveal"><span class="label__n">02</span> Who can use it, and why</p>
+
+      <div class="sec__head">
+        <h2 class="h2 reveal" style="--d:.05s">
+          Built for everyone<br />who <span class="grad">shares this campus</span>.
+        </h2>
+      </div>
+
+      <div class="roles">
+        <div class="roles__col reveal">
+          <h3>Students</h3>
+          <p>Find study partners before the exam, ask the question you've been holding since lecture, and catch the event notice before the WhatsApp forward reaches you.</p>
+        </div>
+        <div class="roles__col reveal" style="--d:.06s">
+          <h3>Faculty &amp; TAs</h3>
+          <p>Post it once, in public, where it stays searchable. Fewer repeat questions, fewer announcements re-typed into five different groups.</p>
+        </div>
+        <div class="roles__col reveal" style="--d:.12s">
+          <h3>Clubs &amp; departments</h3>
+          <p>Own a community instead of borrowing a chatroom. Your members are the people who actually opted in, and they can find the old post later.</p>
+        </div>
+        <div class="roles__col reveal" style="--d:.18s">
+          <h3>Admins</h3>
+          <p>One official surface for the whole campus. Anything that goes up stays up, in order, with an author — instead of vanishing with the chat.</p>
+        </div>
+      </div>
+
+      <div class="why reveal">
+        <p class="why__q">Why?</p>
+        <p class="why__a">
+          Because campus information dies in private chats. It scrolls away, it gets
+          screenshotted without a date, and the person who needed it most never saw it.
+          Putting it in one searchable, public thread costs nothing and fixes almost all of it.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ 04 · TECH STACK ============ -->
+  <section class="sec sec--stack" id="stack">
+    <div class="wrap">
+      <p class="label reveal"><span class="label__n">03</span> Under the hood</p>
+
+      <div class="sec__head">
+        <h2 class="h2 reveal" style="--d:.05s">The stack behind <span class="grad">VIT Connect</span>.</h2>
+        <p class="lede reveal" style="--d:.12s">
+          React and TypeScript on the front, Firebase doing identity and storage,
+          Tailwind for the interface, Vercel for delivery. Nothing here needs a server
+          of its own.
+        </p>
+      </div>
+
+      <div class="stack">
+        <div class="stack__row reveal">
+          <p class="stack__k">Frontend</p><p class="stack__v">React 18</p><p class="stack__r">Component UI, client-side routing with React Router</p>
+        </div>
+        <div class="stack__row reveal" style="--d:.04s">
+          <p class="stack__k">Language</p><p class="stack__v">TypeScript</p><p class="stack__r">Typed models for User, Post, Comment, Community</p>
+        </div>
+        <div class="stack__row reveal" style="--d:.08s">
+          <p class="stack__k">Build</p><p class="stack__v">Vite</p><p class="stack__r">Instant dev server, one-command production build</p>
+        </div>
+        <div class="stack__row reveal" style="--d:.12s">
+          <p class="stack__k">State</p><p class="stack__v">Zustand</p><p class="stack__r">Single store for posts, communities, users, search</p>
+        </div>
+        <div class="stack__row reveal" style="--d:.16s">
+          <p class="stack__k">Styling</p><p class="stack__v">Tailwind CSS</p><p class="stack__r">Utility-first layout, responsive down to small screens</p>
+        </div>
+        <div class="stack__row reveal" style="--d:.2s">
+          <p class="stack__k">Auth</p><p class="stack__v">Firebase Auth</p><p class="stack__r">Email + password, plus one-tap Google sign-in</p>
+        </div>
+        <div class="stack__row reveal" style="--d:.24s">
+          <p class="stack__k">Database</p><p class="stack__v">Cloud Firestore</p><p class="stack__r">users / posts / communities collections, live queries</p>
+        </div>
+        <div class="stack__row reveal" style="--d:.28s">
+          <p class="stack__k">Hosting</p><p class="stack__v">Vercel</p><p class="stack__r">SPA routing, CDN edge delivery — this page is on GitHub Pages</p>
+        </div>
+      </div>
+
+      <p class="stack__foot reveal">
+        Open source. Frontend and Firebase config in the repository — contributions welcome.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <div class="wrap foot__in">
+    <div>
+      <p class="foot__word">VIT Connect</p>
+      <p class="foot__tag">Everything happening at VIT, in one thread.</p>
+    </div>
+    <div class="foot__links">
+      <a href="https://vit-connect.vercel.app" target="_blank" rel="noopener">Live app <span class="ar" aria-hidden="true">↗</span></a>
+      <a href="https://github.com/real-ds/vit-connect" target="_blank" rel="noopener">Source <span class="ar" aria-hidden="true">↗</span></a>
+      <a href="#top">Back to top <span class="ar" aria-hidden="true">↑</span></a>
+    </div>
+    <p class="foot__cr">© <span id="year">2026</span> VIT Connect</p>
+  </div>
+</footer>
+
+<script src="./script.js"></script>
+</body>
+</html>

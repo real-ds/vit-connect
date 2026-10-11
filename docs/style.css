@@ -108,7 +108,7 @@ a { color: inherit; text-decoration: none; }
 .hero {
   background: #000; color: #fff;
   min-height: 100svh;
-  padding: calc(var(--nav-h) + 10vh) 0 0;
+  padding: calc(var(--nav-h) + 6vh) 0 0;
   display: flex; flex-direction: column; justify-content: center;
   position: relative; isolation: isolate; overflow: hidden;
 }
@@ -131,30 +131,28 @@ a { color: inherit; text-decoration: none; }
 }
 .hero__in {
   width: 100%; max-width: var(--wrap); margin: 0 auto;
-  padding: 0 24px 8vh; text-align: center;
+  padding: 0 24px 4vh; text-align: center;
 }
 
+/* sized against viewport height too, so the CTAs never fall below the fold */
 .hero__h1 {
   margin: 0 auto; max-width: 16ch;
-  font-size: clamp(2.7rem, 8.2vw, 7rem);
-  line-height: .95; font-weight: 800; letter-spacing: -.05em;
-  text-shadow: 0 0 64px rgba(255,255,255,.20), 0 0 130px rgba(255,255,255,.09);
+  font-size: clamp(2.1rem, min(6.2vw, 10vh), 5rem);
+  line-height: .98; font-weight: 800; letter-spacing: -.045em;
+  text-shadow: 0 0 54px rgba(255,255,255,.20), 0 0 110px rgba(255,255,255,.09);
 }
 .hero__sub {
-  margin: 38px auto 0; max-width: 34ch;
-  font-size: clamp(1.15rem, 2vw, 1.6rem); line-height: 1.35;
-  font-weight: 500; letter-spacing: -.025em;
-  text-shadow: 0 0 44px rgba(255,255,255,.14);
+  margin: clamp(18px, 3vh, 30px) auto 0; max-width: 34ch;
+  font-size: clamp(1.02rem, min(1.9vw, 3.1vh), 1.45rem); line-height: 1.35;
+  font-weight: 500; letter-spacing: -.022em;
+  text-shadow: 0 0 40px rgba(255,255,255,.14);
 }
 .hero__desc {
-  margin: 20px auto 0; max-width: 52ch;
-  font-size: clamp(1rem, 1.3vw, 1.12rem); line-height: 1.6;
+  margin: clamp(12px, 2vh, 18px) auto 0; max-width: 54ch;
+  font-size: clamp(.95rem, min(1.15vw, 2.1vh), 1.06rem); line-height: 1.55;
   color: var(--fg-mute);
 }
-.hero__cta { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 42px; }
-.hero__meta { margin: 30px 0 0; font-size: 13.5px; color: var(--fg-faint); }
-.hero__meta a { color: var(--fg-mute); border-bottom: 1px solid var(--line); padding-bottom: 1px; transition: color .25s; }
-.hero__meta a:hover { color: #fff; }
+.hero__cta { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: clamp(22px, 4vh, 36px); }
 
 .hero__ticker {
   position: relative; border-top: 1px solid var(--line);
@@ -162,12 +160,15 @@ a { color: inherit; text-decoration: none; }
   padding: 0 24px;
 }
 .hero__ticker span {
-  display: inline-flex; align-items: center; gap: 9px;
-  padding: 20px 0; margin: 0 22px;
-  font-size: 13px; letter-spacing: .1em; text-transform: uppercase;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 16px 0; margin: 0 18px;
+  font-size: 12.5px; letter-spacing: .1em; text-transform: uppercase;
   color: var(--fg-faint); font-weight: 500;
 }
-.hero__ticker svg { width: 15px; height: 15px; flex: none; opacity: .75; }
+.hero__ticker svg { width: 14px; height: 14px; flex: none; opacity: .75; }
+@media (max-width: 640px) {
+  .hero__ticker span { margin: 0 13px; }
+}
 
 /* ---------------- sections ---------------- */
 .sec {
@@ -205,9 +206,9 @@ a { color: inherit; text-decoration: none; }
 
 .h2 {
   margin: 0; max-width: 17ch;
-  font-size: clamp(2.2rem, 5.2vw, 4.4rem);
-  line-height: 1; font-weight: 700; letter-spacing: -.04em;
-  text-shadow: 0 0 60px rgba(255,255,255,.11);
+  font-size: clamp(2rem, min(4.6vw, 6.4vh), 3.8rem);
+  line-height: 1.02; font-weight: 700; letter-spacing: -.035em;
+  text-shadow: 0 0 54px rgba(255,255,255,.11);
 }
 .lede { margin: 0; color: var(--fg-mute); font-size: 1.05rem; line-height: 1.6; letter-spacing: -.005em; }
 
